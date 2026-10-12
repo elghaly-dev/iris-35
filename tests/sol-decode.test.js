@@ -323,7 +323,7 @@ test("index.html loads sol-decode.js before app.js and leaves CSP alone", () => 
 
 test("service worker cache names the decoder and includes the file", () => {
   const sw = fs.readFileSync(path.join(root, "sw.js"), "utf8");
-  assert.match(sw, /var VERSION="2026-09-30-program-names";/);
+  assert.match(sw, /var VERSION="2026-10-12-program-names";/);
   assert.match(sw, /"sol-decode\.js"/);
 });
 

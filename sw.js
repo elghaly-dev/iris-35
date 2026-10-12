@@ -1,7 +1,7 @@
-var VERSION="2026-09-30-program-names";
+var VERSION="2026-10-12-program-names";
 var SHELL="iris-shell-"+VERSION;
 var FILES=["./","index.html","iris.css","i18n.js","sol-decode.js","app.js","boot.js","ui.js","chrome.js",
-  "favicon.svg","iris-eye.svg","hero.svg","qr.svg","icon-192.png","icon-512.png","manifest.webmanifest",
+  "page-menu.js","favicon.svg","iris-eye.svg","hero.svg","qr.svg","icon-192.png","icon-512.png","manifest.webmanifest",
   "IMG_6697.jpeg","IMG_6698.jpeg"];
 
 self.addEventListener("install",function(e){
@@ -29,8 +29,13 @@ self.addEventListener("fetch",function(e){
   if(req.mode==="navigate"){
     e.respondWith(
       fetch(req,{cache:"no-store"}).then(function(res){
-        var copy=res.clone();
-        caches.open(SHELL).then(function(c){c.put("index.html",copy);});
+        // Only the homepage is the offline shell: a 404 page or any other
+        // path must never replace it.
+        var home=/^\/(index\.html)?$/.test(url.pathname);
+        if(res.ok&&home){
+          var copy=res.clone();
+          caches.open(SHELL).then(function(c){c.put("index.html",copy);});
+        }
         return res;
       }).catch(function(){
         return caches.match("index.html").then(function(m){return m||caches.match("./");});

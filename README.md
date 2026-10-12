@@ -40,7 +40,7 @@ outbound calls are to the public chain RPCs listed in the page's CSP.
 | `build.py` | optional local build + `--check` that the branch is complete |
 | `gate.js`, `addr.js`, `lock.js`, `make_logo.py` | **not deployed** — kept for reference only. The deskSigner / Squads addresses `addr.js` held now live in the footer markup |
 
-Footer order (deskSigner, Squads, Cairo, San Francisco) is set in the markup.
+Footer order (deskSigner, Squads) is set in the markup.
 `boot.js` used to reorder it by index, which only held while the two street
 addresses were the only `.addr` nodes.
 
@@ -111,3 +111,8 @@ cd _site && python3 -m http.server 8137
 Adding a string: put it in `UI.en` in `i18n.js`, then in the other five
 blocks, and reference it from the markup with `data-i18n="key"` (or
 `data-i18n-ph` for a placeholder). `applyI18n()` does the rest.
+
+## License
+
+Code: MIT, see [LICENSE](LICENSE).
+Docs and images: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), © elghaly. Third-party fonts, logos and screenshots of other services keep their own licenses.

@@ -15,8 +15,10 @@
 <meta property="og:url" content="https://iris-35.elghaly.dev/"/>
 <meta property="og:title" content="Iris 35 — what happened?"/>
 <meta property="og:description" content="Tap what happened. Free help on your glass. No wallet connect, no seed phrase."/>
-<meta property="og:image" content="https://iris-35.elghaly.dev/hero.svg"/>
-<meta property="og:image:alt" content="35 IRIS ELGHALY — cross, hamsa, eye"/>
+<meta property="og:image" content="https://iris-35.elghaly.dev/og.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Iris 35 — what happened? Free help on your phone, no wallet connect."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:locale:alternate" content="ar_EG"/>
 <meta property="og:locale:alternate" content="ru_RU"/>
@@ -26,9 +28,10 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Iris 35 — what happened?"/>
 <meta name="twitter:description" content="Tap what happened. Free help on your glass. No wallet connect, no seed phrase."/>
-<meta name="twitter:image" content="https://iris-35.elghaly.dev/hero.svg"/>
-<link rel="icon" href="favicon.svg" type="image/svg+xml"/>
-<link rel="apple-touch-icon" href="icon-192.png"/>
+<meta name="twitter:image" content="https://iris-35.elghaly.dev/og.png"/>
+<link rel="icon" href="/favicon.ico" sizes="any"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
 <link rel="manifest" href="manifest.webmanifest"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-title" content="IRIS 35"/>
@@ -42,14 +45,20 @@ body{font-family:ui-sans-serif,system-ui,sans-serif;line-height:1.55;-webkit-tex
 .top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px;flex-wrap:nowrap}
 .brand{display:flex;align-items:center;gap:8px}
 .word{font-size:11px;letter-spacing:.32em;color:var(--dim)}
-.langs{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end;max-width:280px}
-.langs button{border:1px solid var(--l);background:transparent;color:var(--dim);border-radius:999px;padding:8px 12px;font:700 11px inherit;letter-spacing:.08em;cursor:pointer}
+/* The header row as ui.js used to restyle it after first paint: one row of
+   small pills. Set here so the page paints it that way from the start. */
+.langs{display:flex;flex-wrap:nowrap;gap:3px;justify-content:flex-end;flex:1}
+.langs button{border:1px solid var(--l);background:transparent;color:var(--dim);border-radius:999px;padding:5px 7px;font-size:10px;letter-spacing:.08em;cursor:pointer}
 .langs button.on{color:#04110a;background:var(--g);border-color:var(--g)}
 .lock-top{margin:4px auto 12px}
 #desk{scroll-margin-top:72px}
 /* Seven items share the header row on a phone. The theme label pushed it to
    405px on a 390px screen; the colour dot alone fits, and the menu still opens. */
 @media(max-width:480px){#themeCur{display:none}}
+/* Hold the theme button's slot in the row until themes.js adds it, so the
+   language pills do not slide left when it arrives. */
+.langs:not(:has(#themeMenu))::after{content:"";flex:0 0 89px}
+@media(max-width:480px){.langs:not(:has(#themeMenu))::after{flex-basis:26px}}
 .urgent-first{margin-bottom:8px}
 .urgent-h{font-size:clamp(24px,6vw,30px);line-height:1.2;margin:4px 0 10px;letter-spacing:.02em}
 .limits,.safety-note{border-radius:14px;padding:12px 14px;margin:10px 0;font-size:14px;line-height:1.5}
@@ -128,22 +137,23 @@ a{color:var(--c)}
 .talk-sub{font-size:12px;font-weight:400;opacity:.8}
 .voice-hint{color:var(--dim);font-size:13px;text-align:center;margin:0 0 14px}
 .demo{margin:0 0 12px}
-.demo video{display:block;width:100%;height:auto;border-radius:18px;border:1px solid var(--l);background:#0b1214}
+.demo video{display:block;width:100%;height:auto;aspect-ratio:16/9;border-radius:18px;border:1px solid var(--l);background:#0b1214}
 .demo figcaption{color:var(--dim);font-size:12px;letter-spacing:.08em;text-align:center;margin-top:6px}
 @media(max-width:380px){.talk-label{font-size:17px}.talk-icon{font-size:23px}}
 @media print{.voice{display:none}}
 </style>
+<style id="lic-badges-css">.lic-badges{margin:.75rem 0 0;font-size:.75rem;line-height:1.2}.lic-badges>a,.lic-badges>span{display:inline-flex;align-items:center;min-height:24px;margin:.2rem .15rem;padding:0 .6rem;border:1px solid currentColor;border-radius:999px;color:inherit;vertical-align:middle}.lic-badges>a{text-decoration:underline;text-underline-offset:2px}.lic-badges>span{text-decoration:none}</style>
 </head>
 <body>
 <a class="skip" href="#desk" data-i18n="skip">Skip to the desk</a>
 <p id="offline-bar" class="offline-bar" role="status" hidden data-i18n="offline">Offline. Everything on this page still works — only the chain lookup needs a line.</p>
 <div class="wrap">
-  <div class="top">
+  <header class="top">
     <div class="brand" aria-label="IRIS 35">
       <img class="brand-mark" src="mark-35.svg" width="42" height="42" alt="" decoding="async"/>
       <span class="word">IRIS</span>
     </div>
-    <div class="langs" id="langs" role="group" aria-label="Language">
+    <div class="langs" id="langs" role="group" aria-label="Choose language" data-i18n-label="langs_label">
       <button type="button" data-lang="en" class="on" lang="en">EN</button>
       <button type="button" data-lang="ar" lang="ar">AR</button>
       <button type="button" data-lang="ru" lang="ru">RU</button>
@@ -151,11 +161,12 @@ a{color:var(--c)}
       <button type="button" data-lang="de" lang="de">DE</button>
       <button type="button" data-lang="es" lang="es">ES</button>
     </div>
-  </div>
+  </header>
 
+  <main id="main">
   <section class="voice" aria-label="Talk to Iris">
     <figure class="demo">
-      <video controls playsinline preload="metadata" poster="https://iris-desk-voice.onrender.com/demo-poster.jpg" src="https://iris-desk-voice.onrender.com/demo.mp4"></video>
+      <video width="1280" height="720" controls playsinline preload="none" poster="demo-poster.jpg" src="https://iris-desk-voice.onrender.com/demo.mp4"></video>
       <figcaption>Demo video · 60 seconds</figcaption>
     </figure>
     <a class="talk-btn" href="https://iris-desk-voice.onrender.com" target="_blank" rel="noopener noreferrer">
@@ -166,6 +177,7 @@ a{color:var(--c)}
   </section>
 
   <section class="urgent-first" id="what" aria-labelledby="urgent-heading">
+    <div class="page-menu" data-page-menu style="display:flex;justify-content:flex-end;min-height:46px;margin:0 0 .5rem"></div>
     <h1 class="urgent-h" id="urgent-heading" data-i18n="askline">What happened?</h1>
 
     <div class="askgrid" role="group" aria-labelledby="urgent-heading">
@@ -195,7 +207,7 @@ a{color:var(--c)}
     </div>
   </section>
 
-  <div id="desk" class="tabs" role="tablist" aria-label="Desk">
+  <div id="desk" class="tabs" role="tablist" aria-label="Which situation" data-i18n-label="tabs_label">
     <button type="button" id="tab-iphone" role="tab" aria-selected="true" aria-controls="iphone" data-i18n="tab_iphone">iPhone</button>
     <button type="button" id="tab-android" role="tab" aria-selected="false" aria-controls="android" data-i18n="tab_android">Android</button>
     <button type="button" id="tab-sig" role="tab" aria-selected="false" aria-controls="sig" data-i18n="tab_sig">SOL / BTC / ETH</button>
@@ -258,6 +270,7 @@ a{color:var(--c)}
     </div>
   </section>
 
+  </main>
   <footer>
     <p class="marks" aria-hidden="true">✝️🧿🪬</p>
     <p class="tagline tagline-foot" data-i18n="tagline">💭 you dream we build 🧠💡</p>
@@ -266,12 +279,11 @@ a{color:var(--c)}
     <div class="trust">
       <p class="addr addr-key" dir="ltr">deskSigner <a href="https://solscan.io/account/3BZGNtr7AQ5c6Rf7nUhunfvqooQAtb5Eaek9Hw1npbLo" rel="noopener noreferrer">3BZGNtr7AQ5c6Rf7nUhunfvqooQAtb5Eaek9Hw1npbLo</a></p>
       <p class="addr addr-key" dir="ltr">Squads <a href="https://solscan.io/account/GMyuRJbwPTF5pEHvMCNJqujoLk8tZCdFY6i9feMoczcQ" rel="noopener noreferrer">GMyuRJbwPTF5pEHvMCNJqujoLk8tZCdFY6i9feMoczcQ</a></p>
-      <p class="addr addr-eg" dir="ltr">35 Zamalek, Cairo, Egypt</p>
-      <p class="addr" dir="ltr">548 Market Street, San Francisco, California 94104</p>
     </div>
     <p class="plumb-door"><span data-i18n="plumb_note">Ready desk software lives on</span> <a href="https://plumb-35.elghaly.dev/" rel="noopener noreferrer">Plumb</a><span data-i18n="plumb_tail"> — same house, paid seats when you want a machine on the wire.</span></p>
     <p class="made-by" data-i18n="made_by">made by love ❤️</p>
     <p class="marks marks-down" aria-hidden="true">3️⃣🧿5️⃣</p>
+  <p class="lic-badges"><a href="https://creativecommons.org/licenses/by/4.0/" rel="license">© elghaly · CC BY 4.0</a> <a href="https://github.com/Alarm2024/iris-35/blob/main/LICENSE">Code: MIT</a> <a href="https://github.com/Alarm2024">Open source</a></p>
   </footer>
 </div>
 <script type="application/ld+json">
@@ -282,5 +294,6 @@ a{color:var(--c)}
 <script src="app.js"></script>
 <script src="boot.js"></script>
 <script src="ui.js"></script>
+<script src="page-menu.js" defer></script>
 </body>
 </html>
