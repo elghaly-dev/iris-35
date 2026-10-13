@@ -63,7 +63,7 @@ function buildList(){
   return tr("build_h","How to build quiet security")+"\n"+out.join("\n");
 }
 function afterDesk(cls){
-  var pay=tr("pay","First pass is free. If you want the next pass (second phone, family brief, public-address review) write support@elghaly.dev — extra only AFTER the work. No printed price.");
+  var pay=tr("pay","First pass is free. If you want the next pass (second phone, family brief, on-chain review) write support@elghaly.dev — extra only AFTER the work. No printed price.");
   return "<div class='card'><p class='path'>"+esc(tr("after_p","AFTER CLASS {cls} — THIS IS THE DESK",{cls:cls}).replace("{cls}",cls))+"</p>"+
     "<p class='q'>"+esc(tr("after_q","Security is built here. Money is asked here, only if you want more."))+"</p>"+
     "<p class='rule' dir='auto'>"+esc(buildList()+"\n\n"+pay)+"</p></div>";

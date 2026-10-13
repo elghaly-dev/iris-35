@@ -1,7 +1,5 @@
 (function(){
-  var s=document.createElement('script');s.src='themes.js?v=menu11';document.head.appendChild(s);
   var css=document.createElement('style');
-  // The .langs row style lives in index.html now, so it is there at first paint.
   css.textContent='.owner{display:none!important}';
   document.head.appendChild(css);
 })();
@@ -15,17 +13,29 @@ function put(sel, src){
 put(".lock img","IMG_6698.jpeg");
 put(".eye img","IMG_6697.jpeg");
 document.querySelectorAll(".lock-mask,.lock-words").forEach(function(n){n.remove();});
-var cs=document.createElement("script"); cs.src="chrome.js?v=photos"; document.head.appendChild(cs);
+var cs=document.createElement("script"); cs.src="/chrome.js?v=photos"; document.head.appendChild(cs);
 
-var LANGS={en:"en",ar:"ar",ru:"ru",zh:"zh-Hans",de:"de",es:"es"};
+var LANGS={en:"en",ar:"ar",ru:"ru",zh:"zh-Hans"};
+var LANG_PATH={en:"/",ar:"/ar/",ru:"/ru/",zh:"/zh/"};
 
-function setLang(l){
+function langFromPath(){
+  var m=location.pathname.match(/^\/(ar|ru|zh)\/?$/);
+  return m?m[1]:null;
+}
+
+function setLang(l,opts){
+  opts=opts||{};
   if(!LANGS[l])l="en";
+  var target=LANG_PATH[l]||"/";
+  if(!opts.skipNav&&location.pathname!==target&&!(l==="en"&&(location.pathname==="/"||location.pathname===""))){
+    location.href=target;
+    return;
+  }
   try{localStorage.setItem("35-iris-lang",l);}catch(e){}
   var root=document.getElementById("root");
   root.lang=LANGS[l];
   root.dir=(l==="ar")?"rtl":"ltr";
-  document.querySelectorAll("#langs button").forEach(function(b){
+  document.querySelectorAll("#langs .lang-btn").forEach(function(b){
     var on=b.getAttribute("data-lang")===l;
     b.classList.toggle("on",on);
     b.setAttribute("aria-pressed",on?"true":"false");
@@ -36,6 +46,11 @@ function setLang(l){
 }
 
 function initialLang(){
+  if(typeof window.__IRIS_PAGE_LANG==="string"&&LANGS[window.__IRIS_PAGE_LANG]){
+    return window.__IRIS_PAGE_LANG;
+  }
+  var fromPath=langFromPath();
+  if(fromPath)return fromPath;
   var saved=null;
   try{saved=localStorage.getItem("35-iris-lang");}catch(e){}
   if(saved&&LANGS[saved])return saved;
@@ -47,10 +62,10 @@ function initialLang(){
   return "en";
 }
 
-document.querySelectorAll("#langs button").forEach(function(b){
+document.querySelectorAll("#langs .lang-btn").forEach(function(b){
   b.addEventListener("click",function(){setLang(b.getAttribute("data-lang"));});
 });
-setLang(initialLang());
+setLang(initialLang(),{skipNav:true});
 
 function tt(id,fallback){
   if(typeof t!=="function")return fallback;
@@ -78,16 +93,6 @@ if(askgo)askgo.addEventListener("click",function(){
   document.getElementById("askout").classList.add("on");
   document.getElementById("askrep").textContent=replyAsk(document.getElementById("askq").value);
 });
-
-// No health probe and no status pill.
-//
-// This fetched health.json and lit a green "server up" pill when it said ok.
-// health.json was a static file committed here and deployed with the page, so
-// it answered ok whenever the page loaded at all -- there is no IRIS server
-// behind this site to be up or down, and the pill could only show "down" when
-// the visitor was offline and could not see it. Green by construction invites
-// trust nothing earned. paintOnline() below reports the one server state that
-// is real here: whether the visitor has a line.
 
 function paintOnline(){
   var bar=document.getElementById("offline-bar");
@@ -128,7 +133,7 @@ document.querySelectorAll('#desk [role="tab"]').forEach(function(btn,i){
 
 if("serviceWorker" in navigator&&window.isSecureContext){
   window.addEventListener("load",function(){
-    navigator.serviceWorker.register("sw.js").catch(function(){});
+    navigator.serviceWorker.register("/sw.js").catch(function(){});
   });
 }
 })();
