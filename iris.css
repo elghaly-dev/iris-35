@@ -15,7 +15,7 @@
 .lock-mask,.lock-words,.lock .iris-word,.lock .elg-word{display:none!important}
 .cards{display:grid;gap:10px;margin:18px 0}
 .cards .card p.q{margin-bottom:6px}
-.addr{direction:ltr;unicode-bidi:isolate;margin-top:6px;color:#9ab3ad;font-size:13px}
+.addr{direction:ltr;unicode-bidi:isolate;margin-top:6px;color:var(--muted);font-size:13px}
 #gate{display:none!important}
 body.gated{overflow:auto!important}
 .skip{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;
@@ -26,10 +26,10 @@ body.gated{overflow:auto!important}
   border-end-end-radius:12px}
 :focus-visible{outline:2px solid var(--gold-2);outline-offset:2px;border-radius:8px}
 .lang-btn:focus-visible,.lang-switch button:focus-visible,.tabs button:focus-visible,.ans button:focus-visible{outline-offset:3px}
-.offline-bar{background:#f5d76e;color:#1a1400;margin:0;padding:10px 16px;
-  font:600 13px ui-sans-serif,system-ui,sans-serif;text-align:center}
-.progress{color:#9ab3ad;font-size:12px;margin:2px 0 6px}
-.bar{height:4px;border-radius:999px;background:rgba(46,230,199,.18);overflow:hidden;margin-bottom:8px}
+.offline-bar{background:var(--warn);color:var(--gold-ink);margin:0;padding:10px 16px;
+  font:600 13px var(--font,ui-sans-serif,system-ui,sans-serif);text-align:center}
+.progress{color:var(--muted);font-size:12px;margin:2px 0 6px}
+.bar{height:4px;border-radius:999px;background:color-mix(in srgb,var(--gold) 18%,transparent);overflow:hidden;margin-bottom:8px}
 .bar span{display:block;height:100%;background:var(--gold);transition:width .25s ease}
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
@@ -57,8 +57,8 @@ footer .we-are a{color:var(--c);font-weight:600}
 .hero .tagline{margin-top:4px}
 .qr-card{text-align:center}
 .qr{display:block;margin:12px auto;width:min(264px,70vw);height:auto;
-  border-radius:12px;background:#fff;border:1px solid rgba(46,230,199,.28)}
-.qr-card .rule{font-size:12px;color:#9ab3ad;word-break:break-all}
+  border-radius:12px;background:#fff;border:1px solid color-mix(in srgb,var(--gold) 28%,transparent)}
+.qr-card .rule{font-size:12px;color:var(--muted);word-break:break-all}
 @media print{.qr-card{display:block!important;break-inside:avoid}.qr{border:1px solid #000!important}}
 .addr-key{overflow-wrap:anywhere;word-break:break-word;font-size:12px;line-height:1.5}
 .addr-key a{overflow-wrap:anywhere}
