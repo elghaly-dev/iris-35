@@ -307,8 +307,8 @@ test("app.js shows decoder findings as the chain-read notes", () => {
 
 test("index.html loads sol-decode.js before app.js and leaves CSP alone", () => {
   const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
-  const sol = html.indexOf('<script src="sol-decode.js"></script>');
-  const app = html.indexOf('<script src="app.js"></script>');
+  const sol = html.search(/<script src="\/?sol-decode\.js"><\/script>/);
+  const app = html.search(/<script src="\/?app\.js"><\/script>/);
   assert.ok(sol > -1 && app > sol);
   assert.equal((html.match(/Content-Security-Policy/g) || []).length, 1);
   assert.ok(html.includes("script-src 'self'"));
