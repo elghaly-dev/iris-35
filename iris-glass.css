@@ -66,6 +66,7 @@
   --on-bg-line: rgba(255, 255, 255, 0.2);
   --shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 18px 40px -20px rgba(16, 10, 58, 0.6);
   --radius: 22px;
+  --radius-sm: 20px;
   --font: "Outfit", "Cairo", system-ui, -apple-system, "Segoe UI", sans-serif;
   --max: 72rem;
   --gutter: 1rem;
@@ -515,4 +516,40 @@ html[lang|="ar"] .cta {
 
 html[lang|="zh"] .urgent-h {
   letter-spacing: 0.02em;
+}
+
+/* Text on --bg: spec tokens that meet 4.5:1 on #5a4fc0 (axe / Lighthouse). */
+body .demo figcaption,
+body .voice-hint,
+body .progress,
+body h2,
+body label,
+body .limits h2,
+body .path {
+  color: var(--gold-2);
+}
+
+body .safety-note strong {
+  color: var(--text);
+}
+
+body .bullets,
+body .bullets li,
+body footer,
+body footer .we-are,
+body footer .plumb-door,
+body footer .plumb-door span,
+body footer .trust,
+body footer .lic-badges,
+body footer .lic-badges a,
+body footer .lic-badges span,
+body footer .made-by {
+  color: var(--text);
+}
+
+body footer a,
+body footer .plumb-door a,
+body footer .we-are a {
+  color: var(--text);
+  font-weight: 600;
 }
