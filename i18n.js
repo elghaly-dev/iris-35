@@ -144,6 +144,14 @@ fwd_q:"有你没设的 Gmail 转发吗？",fwd_p:"Gmail → 设置 → 转发"
 /* ---------- UI chrome, verdicts and answers: one entry per language ---------- */
 var UI={};
 UI.en={
+nav_iris:"Iris",
+nav_plumb:"Plumb",
+footer_llc:"elghaly, LLC",
+footer_contact:"Email first: support@elghaly.dev. Calls only by appointment.",
+demo_cap:"Demo video · 60 seconds",
+talk_label:"Connect & talk",
+talk_sub:"Tap, then speak",
+voice_hint:"🔊 Turn your volume up and tap to talk. Iris answers out loud. On iPhone, switch off silent mode first.",
 page_title:"Iris 35 — what happened?",
 eye_alt:"The IRIS eye, under a cross, above an open hand",
 skip:"Skip to the desk",
@@ -206,7 +214,7 @@ build_4:"Turn on 2FA you control. Never send the code.",
 build_5:"No helper app. No screen share.",
 build_6:"Show this page to one person you love.",
 build_7:"Repeat the list in seven days.",
-pay:"First pass is free. If you want the next pass (second phone, family brief, public-address review) write support@elghaly.dev — extra only AFTER the work. No printed price.",
+pay:"First pass is free. If you want the next pass (second phone, family brief, on-chain review) write support@elghaly.dev — extra only AFTER the work. No printed price.",
 a_empty:"Write what they said or what you see.",
 a_seed:"Do not paste that here. Wipe the box. Change it on YOUR device.",
 a_install:"Do not install. Open the phone tab.",
@@ -224,6 +232,14 @@ c_timeout:"The chain lookup timed out. This is not a verdict — try again.",
 c_working:"WORKING",c_error:"NO READ"
 };
 UI.ar={
+nav_iris:"إيريس",
+nav_plumb:"Plumb",
+footer_llc:"elghaly, LLC",
+footer_contact:"البريد أولاً: support@elghaly.dev. المكالمات بموعد فقط.",
+demo_cap:"فيديو توضيحي · 60 ثانية",
+talk_label:"اتصل وتحدّث",
+talk_sub:"اضغط، ثم تكلّم",
+voice_hint:"🔊 ارفع الصوت واضغط للتحدّث. إيريس تجيب بصوت عالٍ. على آيفون، أوقف الوضع الصامت أولاً.",
 page_title:"إيريس 35 — ماذا حدث؟",
 eye_alt:"عين إيريس، تحت الصليب، فوق كفّ مفتوحة",
 skip:"تخطى إلى المكتب",
@@ -305,6 +321,14 @@ c_timeout:"انتهت مهلة القراءة. هذا ليس حكماً — أع
 c_working:"جارٍ",c_error:"لا قراءة"
 };
 UI.ru={
+nav_iris:"Iris",
+nav_plumb:"Plumb",
+footer_llc:"elghaly, LLC",
+footer_contact:"Сначала почта: support@elghaly.dev. Звонки только по записи.",
+demo_cap:"Демо · 60 секунд",
+talk_label:"Подключиться и говорить",
+talk_sub:"Нажми, затем говори",
+voice_hint:"🔊 Увеличь громкость и нажми, чтобы говорить. Iris отвечает вслух. На iPhone сначала выключи беззвучный режим.",
 page_title:"Iris 35 — что случилось?",
 eye_alt:"Глаз IRIS — под крестом, над открытой ладонью",
 skip:"Перейти к столу",
@@ -545,6 +569,14 @@ c_timeout:"La lectura de la cadena agotó el tiempo. Esto no es un veredicto —
 c_working:"LEYENDO",c_error:"SIN LECTURA"
 };
 UI.zh={
+nav_iris:"Iris",
+nav_plumb:"Plumb",
+footer_llc:"elghaly, LLC",
+footer_contact:"请先邮件联系：support@elghaly.dev。通话仅预约。",
+demo_cap:"演示视频 · 60 秒",
+talk_label:"连接并说话",
+talk_sub:"点按，然后说话",
+voice_hint:"🔊 调高音量并点按说话。Iris 会大声回答。在 iPhone 上请先关闭静音模式。",
 page_title:"Iris 35 — 发生了什么？",
 eye_alt:"IRIS 之眼：十字之下，张开的手之上",
 skip:"跳到工作台",

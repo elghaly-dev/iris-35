@@ -28,7 +28,7 @@ ROOT = pathlib.Path(__file__).parent
 
 # Every file the page needs in order to work when served from the branch.
 REQUIRED = [
-    "index.html", "iris.css", "i18n.js", "sol-decode.js", "app.js", "boot.js", "ui.js", "sw.js", "page-menu.js",
+    "index.html", "iris.css", "iris-glass.css", "i18n.js", "sol-decode.js", "app.js", "boot.js", "ui.js", "sw.js", "page-menu.js",
     "favicon.svg", "iris-eye.svg", "qr.svg", "manifest.webmanifest",
     "icon-192.png", "icon-512.png", "icon-maskable-512.png",
     "health.json", "robots.txt", "sitemap.xml", "CNAME", ".nojekyll",
@@ -66,6 +66,38 @@ def bump_worker():
     print("  service worker version -> %s-%s" % (stamp, digest))
 
 
+LANG_PAGES = {
+    "ar": ("ar", "rtl", "https://iris-35.elghaly.dev/ar/"),
+    "ru": ("ru", "ltr", "https://iris-35.elghaly.dev/ru/"),
+    "zh": ("zh-Hans", "ltr", "https://iris-35.elghaly.dev/zh/"),
+}
+
+
+def write_lang_pages():
+    """One HTML file per locale so /ar/ etc. are real translated pages."""
+    base = (ROOT / "index.html").read_text(encoding="utf-8")
+    for code, (lang, direction, canonical) in LANG_PAGES.items():
+        html = base
+        html = html.replace('<html lang="en" id="root">',
+                            '<html lang="%s" dir="%s" id="root">' % (lang, direction))
+        html = html.replace('href="https://iris-35.elghaly.dev/"',
+                            'href="%s"' % canonical, 1)
+        html = html.replace('content="https://iris-35.elghaly.dev/"',
+                            'content="%s"' % canonical, 1)
+        if code == "ar":
+            html = html.replace('content="en_US"', 'content="ar"', 1)
+        elif code == "ru":
+            html = html.replace('content="en_US"', 'content="ru_RU"', 1)
+        elif code == "zh":
+            html = html.replace('content="en_US"', 'content="zh_CN"', 1)
+        inject = '<script>window.__IRIS_PAGE_LANG="%s";</script>\n' % code
+        html = html.replace("<head>", "<head>\n" + inject, 1)
+        out_dir = ROOT / code
+        out_dir.mkdir(exist_ok=True)
+        (out_dir / "index.html").write_text(html, encoding="utf-8")
+        print("  language page -> %s/index.html" % code)
+
+
 def bake_hero():
     """lockup.py writes _site/lockup.jpg; move it to the root and re-point the page."""
     subprocess.run([sys.executable, "lockup.py"], check=True)
@@ -87,6 +119,7 @@ if __name__ == "__main__":
     if "--check" in sys.argv:
         raise SystemExit(check())
     subprocess.run([sys.executable, "icons.py", "--root"], check=True)
+    write_lang_pages()
     bake_hero()
     bump_worker()
     raise SystemExit(check())

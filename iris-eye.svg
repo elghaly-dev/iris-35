@@ -1,56 +1,56 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="IRIS 35 ElGhaly landscape">
   <defs>
     <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#02080c"/>
-      <stop offset=".4" stop-color="#083038"/>
-      <stop offset="1" stop-color="#061820"/>
+      <stop offset="0" stop-color="#5a4fc0"/>
+      <stop offset=".4" stop-color="#17142f"/>
+      <stop offset="1" stop-color="#0d0b1f"/>
     </linearGradient>
     <radialGradient id="glow" cx="50%" cy="22%" r="36%">
-      <stop offset="0" stop-color="#3ee8d0" stop-opacity=".45"/>
-      <stop offset="1" stop-color="#02080c" stop-opacity="0"/>
+      <stop offset="0" stop-color="#c9c2ff" stop-opacity=".45"/>
+      <stop offset="1" stop-color="#0d0b1f" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="iris" cx="38%" cy="32%" r="70%">
-      <stop offset="0" stop-color="#f4ffff"/>
-      <stop offset=".18" stop-color="#8ff6e4"/>
-      <stop offset=".45" stop-color="#1f8f82"/>
-      <stop offset="1" stop-color="#041016"/>
+      <stop offset="0" stop-color="#e2deff"/>
+      <stop offset=".18" stop-color="#c9c2ff"/>
+      <stop offset=".45" stop-color="#6a5fd0"/>
+      <stop offset="1" stop-color="#17123d"/>
     </radialGradient>
     <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#145056"/>
-      <stop offset="1" stop-color="#03090c"/>
+      <stop offset="0" stop-color="#2e2856"/>
+      <stop offset="1" stop-color="#0d0b1f"/>
     </linearGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#sky)"/>
   <ellipse cx="600" cy="160" rx="340" ry="150" fill="url(#glow)"/>
-  <path d="M0 250 C140 210 240 300 360 250 C500 190 620 300 760 240 C920 170 1060 280 1200 220 L1200 420 L0 420 Z" fill="#07161c"/>
-  <path d="M0 310 C180 270 320 360 500 300 C680 240 880 350 1200 280 L1200 430 L0 430 Z" fill="#0a1e24"/>
+  <path d="M0 250 C140 210 240 300 360 250 C500 190 620 300 760 240 C920 170 1060 280 1200 220 L1200 420 L0 420 Z" fill="#17142f"/>
+  <path d="M0 310 C180 270 320 360 500 300 C680 240 880 350 1200 280 L1200 430 L0 430 Z" fill="#1c1838"/>
   <rect x="0" y="400" width="1200" height="230" fill="url(#water)"/>
-  <path d="M480 400 V630" stroke="#7cf0dc" stroke-opacity=".25" stroke-width="18"/>
-  <g opacity=".4" fill="none" stroke="#2ee6c7" stroke-width="1.2">
+  <path d="M480 400 V630" stroke="#c9c2ff" stroke-opacity=".25" stroke-width="18"/>
+  <g opacity=".4" fill="none" stroke="#c9c2ff" stroke-width="1.2">
     <path d="M20 430 Q220 410 420 438 T820 428 T1180 445"/>
     <path d="M0 470 Q260 452 520 478 T1180 470"/>
     <path d="M40 510 Q300 492 560 518 T1160 508"/>
   </g>
-  <g transform="translate(600 56)" stroke="#e8fbf6" stroke-width="4" fill="none" stroke-linecap="round">
+  <g transform="translate(600 56)" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round">
     <path d="M0 0 V40"/><path d="M-16 18 H16"/>
   </g>
   <g transform="translate(600 150)">
-    <ellipse rx="150" ry="58" fill="none" stroke="#d7efe9" stroke-width="3"/>
-    <circle r="34" fill="url(#iris)" stroke="#8ff6e4" stroke-width="2"/>
-    <circle r="13" fill="#041016"/>
-    <circle cx="8" cy="-7" r="4" fill="#f4ffff"/>
+    <ellipse rx="150" ry="58" fill="none" stroke="#e2deff" stroke-width="3"/>
+    <circle r="34" fill="url(#iris)" stroke="#c9c2ff" stroke-width="2"/>
+    <circle r="13" fill="#17123d"/>
+    <circle cx="8" cy="-7" r="4" fill="#e2deff"/>
   </g>
-  <g transform="translate(600 268)" fill="none" stroke="#d7efe9" stroke-width="3" stroke-linejoin="round">
+  <g transform="translate(600 268)" fill="none" stroke="#e2deff" stroke-width="3" stroke-linejoin="round">
     <path d="M-48 10 V-48 C-48 -64 -32 -74 -18 -64"/>
     <path d="M-16 10 V-58 C-16 -74 0 -80 12 -66 V10"/>
     <path d="M20 10 V-52 C20 -68 36 -74 46 -60 V12"/>
     <path d="M-56 12 C-56 54 -28 86 0 96 C28 86 56 54 56 12"/>
-    <circle cx="0" cy="44" r="5" fill="#2ee6c7" stroke="none"/>
+    <circle cx="0" cy="44" r="5" fill="#7be3b0" stroke="none"/>
   </g>
-  <text x="600" y="430" text-anchor="middle" font-family="Georgia,Times New Roman,serif" font-size="52" letter-spacing="18" fill="#f3fbf8">IRIS</text>
-  <text x="600" y="488" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="44" font-weight="700" letter-spacing="12" fill="#7cf0dc">— 35 —</text>
-  <text x="600" y="530" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="22" letter-spacing="12" fill="#c8d4d0">ELGHALY</text>
-  <g transform="translate(600 568)" fill="none" stroke="#d7efe9" stroke-width="1.8">
+  <text x="600" y="430" text-anchor="middle" font-family="Georgia,Times New Roman,serif" font-size="52" letter-spacing="18" fill="#ffffff">IRIS</text>
+  <text x="600" y="488" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="44" font-weight="700" letter-spacing="12" fill="#c9c2ff">— 35 —</text>
+  <text x="600" y="530" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="22" letter-spacing="12" fill="#b9b3e6">ELGHALY</text>
+  <g transform="translate(600 568)" fill="none" stroke="#e2deff" stroke-width="1.8">
     <path d="M-90 0 H-20"/><path d="M20 0 H90"/>
     <path d="M-6 -8 H6 M0 -14 V2"/>
   </g>

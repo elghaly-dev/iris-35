@@ -32,9 +32,10 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p _site
-          cp index.html sol-decode.js app.js favicon.svg CNAME iris.css i18n.js boot.js ui.js sw.js page-menu.js \
-             manifest.webmanifest robots.txt sitemap.xml iris-eye.svg qr.svg health.json \
+          cp index.html sol-decode.js app.js favicon.svg CNAME iris.css iris-glass.css i18n.js boot.js ui.js sw.js page-menu.js \
+             manifest.webmanifest robots.txt sitemap.xml iris-eye.svg qr.svg health.json mark-35.svg \
              favicon.ico apple-touch-icon.png demo-poster.jpg 404.html og.png _site/
+          cp -r fonts ar ru zh _site/
           cp health.json _site/health
           python3 -m pip install --quiet pillow
           python3 lockup.py

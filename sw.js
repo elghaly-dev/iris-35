@@ -1,6 +1,6 @@
-var VERSION="2026-10-12-program-names";
+var VERSION="2026-10-17-page-menu-8";
 var SHELL="iris-shell-"+VERSION;
-var FILES=["./","index.html","iris.css","i18n.js","sol-decode.js","app.js","boot.js","ui.js","chrome.js",
+var FILES=["./","index.html","iris.css","iris-glass.css","i18n.js","sol-decode.js","app.js","boot.js","ui.js","chrome.js",
   "page-menu.js","favicon.svg","iris-eye.svg","hero.svg","qr.svg","icon-192.png","icon-512.png","manifest.webmanifest",
   "IMG_6697.jpeg","IMG_6698.jpeg"];
 
