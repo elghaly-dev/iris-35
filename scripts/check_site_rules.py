@@ -26,7 +26,7 @@ FORBIDDEN = [
 # Public company address: this exact string, in the footer of every full page.
 ADDRESS = "Elghaly LLC, 548 Market St, San Francisco, CA 94104, USA"
 
-# Banned in visible copy (owner rule; the Faithful Servant name replaces "AI").
+# Banned in visible copy (owner rule; the assistant is named «الغالي», never "AI").
 BANNED = re.compile(r"\b(free|safe|safety|AI)\b", re.I)
 # Hits already on main when this check was added (page -> word -> count).
 # The check fails on any hit above these numbers, so nothing new gets in.
