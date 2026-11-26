@@ -8,7 +8,7 @@ iphone:{key:"35-iris-iphone-v2",nextC:"Stop. Remove the unknown device / profile
 {id:"mdm",q:"A configuration profile or MDM you did not install?",path:"Settings -> General -> VPN & Device Management",yes:"C"},
 {id:"ext",q:"A Safari extension you do not remember installing?",path:"Settings -> Apps -> Safari -> Extensions",yes:"B"},
 {id:"chat",q:"A second phone or browser linked to WhatsApp / iMessage / Telegram?",path:"WhatsApp -> Settings -> Linked devices",yes:"C"},
-{id:"mail",q:"Mail forwarding or a filter you did not set?",path:"Gmail / iCloud Mail filters. Look only.",yes:"C"},
+{id:"mail",q:"Mail forwarding or a filter you did not set?",path:"Gmail / iCloud Mail filters. Look, don't touch.",yes:"C"},
 {id:"screen",q:"Screen Sharing or a remote-view app you did not turn on?",path:"Settings -> Screen Time -> unknown apps",yes:"C"},
 {id:"shareplay",q:"Did anyone ask you to share the screen to fix the wallet?",path:"Control Center -> Screen Mirroring. Decline helpers.",yes:"C"},
 {id:"profile",q:"Did anyone send a settings profile file (.mobileconfig)?",path:"Mail / Files / Safari downloads. Do not install.",yes:"C"}
@@ -63,9 +63,9 @@ function buildList(){
   return tr("build_h","How to build quiet security")+"\n"+out.join("\n");
 }
 function afterDesk(cls){
-  var pay=tr("pay","First pass is free. If you want the next pass (second phone, family brief, on-chain review) write support@elghaly.dev — extra only AFTER the work. No printed price.");
+  var pay=tr("pay","No charge for the first pass. If you want the next pass (second phone, family brief, on-chain review) write support@elghaly.dev — extra AFTER the work. No printed price.");
   return "<div class='card'><p class='path'>"+esc(tr("after_p","AFTER CLASS {cls} — THIS IS THE DESK",{cls:cls}).replace("{cls}",cls))+"</p>"+
-    "<p class='q'>"+esc(tr("after_q","Security is built here. Money is asked here, only if you want more."))+"</p>"+
+    "<p class='q'>"+esc(tr("after_q","Security is built here. Money is asked here if you want more."))+"</p>"+
     "<p class='rule' dir='auto'>"+esc(buildList()+"\n\n"+pay)+"</p></div>";
 }
 

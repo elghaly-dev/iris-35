@@ -2,8 +2,9 @@
 """House-rule checks for Elghaly product-site HTML (stdlib only).
 
 Also enforced on every full page: the exact company address in the footer,
-and no banned word (free, safe, safety, AI) in visible text beyond the
-baseline of hits that were on main when the check was added."""
+and no banned word in visible text or in the copy the scripts write:
+free/مجان/бесплатн/免费, safe/safety/آمن/безопасн/安全, only/فقط/только/仅/只,
+%, AI, ذكاء اصطناعي."""
 import pathlib
 import re
 import sys
@@ -27,13 +28,19 @@ FORBIDDEN = [
 ADDRESS = "Elghaly LLC, 548 Market St, San Francisco, CA 94104, USA"
 
 # Banned in visible copy (owner rule; the assistant is named «الغالي», never "AI").
-BANNED = re.compile(r"\b(free|safe|safety|AI)\b", re.I)
+# Latin words use word boundaries; Arabic, Russian stems and Chinese match as
+# substrings (CJK has no word boundaries), and so does "%".
+BANNED = re.compile(
+    r"\b(free|safe|safety|only|AI)\b"
+    r"|(مجان|فقط|آمن|ذكاء اصطناعي|бесплатн|только|безопасн|免费|仅|只|安全|%)",
+    re.I,
+)
 # Hits already on main when this check was added (page -> word -> count).
 # The check fails on any hit above these numbers, so nothing new gets in.
 # Remove entries as the copy is fixed.
-MENU_BASELINE = {"Markdown for AI tools", "Ask AI about this page"}  # existing labels; fix then remove
+MENU_BASELINE = set()  # page-menu labels allowed to carry a banned word (none)
 FOOTER_ENFORCED = False  # flip to True once the footer PRs (plain name + address) are merged
-BANNED_BASELINE = {"ar/index.html": {"free": 9, "safe": 2, "safety": 1}, "index.html": {"free": 9, "safe": 2, "safety": 1}, "ru/index.html": {"free": 9, "safe": 2, "safety": 1}, "zh/index.html": {"free": 9, "safe": 2, "safety": 1}}
+BANNED_BASELINE = {}
 
 SKIP = {".git", ".github", "tools", "fonts", "assets"}
 EXEMPT_FRAGMENTS = (
@@ -118,7 +125,7 @@ def address_and_banned(rel: str, raw: str) -> list:
         )
     )
     for m in BANNED.finditer(visible_text(raw) + " " + attrs):
-        w = m.group(1).lower()
+        w = (m.group(1) or m.group(2)).lower()
         counts[w] = counts.get(w, 0) + 1
     allowed = BANNED_BASELINE.get(rel, {})
     for w, n in sorted(counts.items()):
@@ -134,6 +141,34 @@ def html_pages():
         if "site-kit" in path.parts and path.name == "head.html":
             continue
         yield path
+
+
+# Copy the scripts write into the page: every key:"value" in the language
+# tables, and the English fallbacks passed to tt()/tr().
+COPY_FILES = ("i18n.js", "boot.js")
+FALLBACK_FILES = ("ui.js", "app.js")
+# Real phone menu names (Android/Google settings), quoted as the phone shows them.
+COPY_ALLOWED = {
+    "Настройки → Google → Безопасность → Устройства",
+    "Настройки → Безопасность → Админы",
+    "设置 → Google → 安全 → 设备",
+    "设置 → 安全 → 设备管理应用",
+}
+_KV = re.compile(r'\b(\w+):"((?:[^"\\]|\\.)*)"')
+_FALLBACK = re.compile(r'\b(?:tt|tr)\(\s*"(\w+)"\s*,\s*"((?:[^"\\]|\\.)*)"')
+
+
+def copy_strings() -> list:
+    errs = []
+    for name, pat in [(f, _KV) for f in COPY_FILES] + [(f, _FALLBACK) for f in FALLBACK_FILES]:
+        path = ROOT / name
+        if not path.exists():
+            continue
+        for key, val in pat.findall(path.read_text(encoding="utf-8")):
+            m = BANNED.search(val)
+            if m and val not in COPY_ALLOWED:
+                errs.append("%s: banned word %r in %s: %r" % (name, m.group(0), key, val[:80]))
+    return errs
 
 
 def main():
@@ -171,9 +206,13 @@ def main():
     menu = ROOT / "page-menu.js"
     if menu.exists():
         for lit in re.findall(r'"([^"\n]*)"', menu.read_text(encoding="utf-8")):
+            if re.search(r"[\w-]+:[^;\s][^;]*;", lit):
+                continue  # a line of CSS, not a label
             m = BANNED.search(lit)
             if m and lit not in MENU_BASELINE:
-                errors.append("page-menu.js: banned word %r in %r" % (m.group(1), lit))
+                errors.append("page-menu.js: banned word %r in %r" % (m.group(0), lit))
+
+    errors.extend(copy_strings())
 
     for msg in errors:
         print("FAIL", msg)

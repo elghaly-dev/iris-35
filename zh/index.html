@@ -10,17 +10,17 @@
 <meta name="referrer" content="no-referrer"/>
 <meta name="theme-color" content="#07080c"/>
 <meta name="color-scheme" content="dark"/>
-<meta name="description" content="Iris 35 — what happened? Tap your situation. Free help on your phone. No wallet connect."/>
+<meta name="description" content="Iris 35 — what happened? Tap your situation. Help on your phone. No wallet connect."/>
 <link rel="canonical" href="https://iris-35.elghaly.dev/zh/"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Iris 35"/>
 <meta property="og:url" content="https://iris-35.elghaly.dev/zh/"/>
 <meta property="og:title" content="Iris 35 — what happened?"/>
-<meta property="og:description" content="Tap what happened. Free help on your glass. No wallet connect, no seed phrase."/>
+<meta property="og:description" content="Tap what happened. Help on your glass. No wallet connect, no seed phrase."/>
 <meta property="og:image" content="https://iris-35.elghaly.dev/og.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
-<meta property="og:image:alt" content="Iris 35 — what happened? Free help on your phone, no wallet connect."/>
+<meta property="og:image:alt" content="Iris 35 — what happened? Help on your phone, no wallet connect."/>
 <meta property="og:locale" content="zh_CN"/>
 <meta property="og:locale:alternate" content="ar"/>
 <meta property="og:locale:alternate" content="ru_RU"/>
@@ -32,7 +32,7 @@
 <link rel="alternate" hreflang="x-default" href="https://iris-35.elghaly.dev/"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Iris 35 — what happened?"/>
-<meta name="twitter:description" content="Tap what happened. Free help on your glass. No wallet connect, no seed phrase."/>
+<meta name="twitter:description" content="Tap what happened. Help on your glass. No wallet connect, no seed phrase."/>
 <meta name="twitter:image" content="https://iris-35.elghaly.dev/og.png"/>
 <link rel="icon" href="/favicon.ico" sizes="any"/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
@@ -127,7 +127,7 @@ a{color:var(--c)}
 </head>
 <body>
 <a class="skip" href="#desk" data-i18n="skip">Skip to the desk</a>
-<p id="offline-bar" class="offline-bar" role="status" hidden data-i18n="offline">Offline. Everything on this page still works — only the chain lookup needs a line.</p>
+<p id="offline-bar" class="offline-bar" role="status" hidden data-i18n="offline">Offline. Everything on this page still works — the chain lookup needs a line.</p>
 <div class="wrap">
   <header class="nav">
     <div class="nav__in">
@@ -152,7 +152,7 @@ a{color:var(--c)}
   <main id="main">
   <section class="voice" aria-label="Talk to Iris">
     <figure class="demo">
-      <video width="1280" height="720" controls playsinline preload="none" poster="demo-poster.jpg" src="https://iris-desk-voice.onrender.com/demo.mp4"></video>
+      <video width="1280" height="720" controls playsinline preload="none" poster="/demo-poster.jpg" src="https://iris-desk-voice.onrender.com/demo.mp4"></video>
       <figcaption data-i18n="demo_cap">Demo video · 60 seconds</figcaption>
     </figure>
     <a class="talk-btn" href="https://iris-desk-voice.onrender.com" target="_blank" rel="noopener noreferrer">
@@ -177,8 +177,8 @@ a{color:var(--c)}
       <h2 data-i18n="limits_h">What IRIS can and cannot do</h2>
       <ul>
         <li data-i18n="limits_can">CAN: read a public transaction hash and show what it does on chain; walk checklists on your phone for unknown devices and apps.</li>
-        <li data-i18n="limits_cannot">CANNOT: recover funds; reverse a transaction; say something is safe; verify who called, emailed, or messaged you.</li>
-        <li data-i18n="limits_when">Go to your exchange, bank, or police if money moved without your consent, someone impersonates Apple / bank / support, or you fear for your safety.</li>
+        <li data-i18n="limits_cannot">CANNOT: recover funds; reverse a transaction; say something is harmless; verify who called, emailed, or messaged you.</li>
+        <li data-i18n="limits_when">Go to your exchange, bank, or police if money moved without your consent, someone impersonates Apple / bank / support, or you feel in danger.</li>
       </ul>
     </div>
 
@@ -189,7 +189,7 @@ a{color:var(--c)}
 
     <div class="safety-note hash-note" role="note">
       <strong data-i18n="safety_hash_h">About pasting a hash</strong>
-      <span data-i18n="safety_hash">A hash check shows what a transaction does. That is not the same as safe. IRIS cannot tell you to sign, connect a wallet, or approve.</span>
+      <span data-i18n="safety_hash">A hash check shows what a transaction does. That is not the same as harmless. IRIS cannot tell you to sign, connect a wallet, or approve.</span>
     </div>
   </section>
 
@@ -202,7 +202,7 @@ a{color:var(--c)}
   <div id="android" class="panel" role="tabpanel" aria-labelledby="tab-android" tabindex="-1"></div>
   <div id="sig" class="panel" role="tabpanel" aria-labelledby="tab-sig" tabindex="-1">
     <div class="card">
-      <label for="q" data-i18n="hash_label">Public hash only</label>
+      <label for="q" data-i18n="hash_label">Public hash</label>
       <textarea id="q" spellcheck="false" autocomplete="off" autocapitalize="off" data-i18n-ph="hash_ph" placeholder="SOL signature / BTC txid / ETH 0x hash — or paste the explorer link"></textarea>
       <div class="row">
         <button class="go" id="run" type="button" data-i18n="classify">Classify</button>
@@ -233,9 +233,9 @@ a{color:var(--c)}
 
   <section class="later" aria-label="About IRIS">
     <ul class="bullets">
-      <li data-i18n="b1">What it is: a free open server. Look, tap, get the next path.</li>
+      <li data-i18n="b1">What it is: an open server. Look, tap, get the next path.</li>
       <li data-i18n="b2">Who it is for: you, on your iPhone or Android. Nobody holds the phone.</li>
-      <li data-i18n="b3">Free to start. Extra only if you ask after the work.</li>
+      <li data-i18n="b3">Start now. Extra if you ask, after the work.</li>
     </ul>
     <div class="how">
       <div><b data-i18n="how1_h">1 Look</b><span data-i18n="how1_p">Open the path on YOUR glass.</span></div>
@@ -244,9 +244,9 @@ a{color:var(--c)}
     </div>
     <div class="hero">
       <p class="tagline" data-i18n="tagline">💭 you dream we build 🧠💡</p>
-      <h2 class="h1" data-i18n="h1">Iris 35 — free server to think and ship</h2>
-      <p class="lede" data-i18n="lede">Open on your glass. Free to start.</p>
-      <a class="cta" href="#what" data-i18n="cta">Start free</a>
+      <h2 class="h1" data-i18n="h1">Iris 35 — open server to think and ship</h2>
+      <p class="lede" data-i18n="lede">Open on your glass. Start now.</p>
+      <a class="cta" href="#what" data-i18n="cta">Start now</a>
       <div class="row" id="install-row" hidden style="justify-content:center">
         <button class="ghost" type="button" id="install-go" data-i18n="install">Add IRIS to your home screen</button>
       </div>
@@ -271,7 +271,7 @@ a{color:var(--c)}
   </footer>
 </div>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"Iris 35","url":"https://iris-35.elghaly.dev/","inLanguage":["en","ar","ru","zh"],"description":"What happened? Free help on your phone. Tap your situation — no wallet connect.","publisher":{"@type":"Organization","name":"elghaly, LLC","email":"support@elghaly.dev","url":"https://iris-35.elghaly.dev/"}}
+{"@context":"https://schema.org","@type":"WebSite","name":"Iris 35","url":"https://iris-35.elghaly.dev/","inLanguage":["en","ar","ru","zh"],"description":"What happened? Help on your phone. Tap your situation — no wallet connect.","publisher":{"@type":"Organization","name":"elghaly, LLC","email":"support@elghaly.dev","url":"https://iris-35.elghaly.dev/"}}
 </script>
 <script src="/i18n.js"></script>
 <script src="/sol-decode.js"></script>
