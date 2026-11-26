@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
 <title>Iris 35 — what happened?</title>
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://iris-desk-voice.onrender.com; media-src https://iris-desk-voice.onrender.com; font-src 'self'; manifest-src 'self'; worker-src 'self'; connect-src 'self' https://api.mainnet-beta.solana.com https://solana-rpc.publicnode.com https://ethereum.publicnode.com https://mempool.space; form-action 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'"/>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://iris-desk-voice.onrender.com https://elghaly.dev; media-src https://iris-desk-voice.onrender.com; font-src 'self'; manifest-src 'self'; worker-src 'self'; connect-src 'self' https://api.mainnet-beta.solana.com https://solana-rpc.publicnode.com https://ethereum.publicnode.com https://mempool.space; form-action 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'"/>
 <meta name="referrer" content="no-referrer"/>
 <meta name="theme-color" content="#07080c"/>
 <meta name="color-scheme" content="dark"/>
@@ -137,13 +137,15 @@ a{color:var(--c)}
   --ivory: #efe8d8;
   --muted: #a39b88;
   --radius: 18px;
+  --gold-soft: #e6d4fa;
   color-scheme: dark;
 }
 .mark { margin: 18px 0 0; /* Room above and below so no glyph is ever clipped by the text clip. */ padding: .12em .08em .18em; font-family: "Cinzel", Georgia, serif; font-style: normal; font-weight: 700; font-size: clamp(3rem, 13.5vw, 6rem); line-height: 1.15; letter-spacing: .06em; overflow: visible; background: linear-gradient(100deg, var(--gold-soft) 0%, var(--gold) 45%, #9f7fd1 100%); -webkit-background-clip: text; background-clip: text; -webkit-box-decoration-break: clone; box-decoration-break: clone; color: transparent; }
 .signs { margin: 14px 0 0; font-size: 1.1rem; letter-spacing: .3em; }
 /* The signs always read left to right. */ .signs, .team__signs { direction: ltr; unicode-bidi: isolate; }
 .footer .signs { font-size: 1rem; letter-spacing: .25em; }
-.rule { width: 120px; height: 1px; margin: 26px auto 0; border: 0; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+/* Wordmark and signs centred over the rule, as on elghaly.dev. */ h1.mark, p.signs { text-align: center; }
+hr.rule { width: 120px; height: 1px; margin: 26px auto 0; border: 0; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
 .heard__title { margin: 0 0 20px; text-align: center; font-weight: 500; font-size: clamp(1.2rem, 5vw, 1.6rem); letter-spacing: .01em; }
 .stops{list-style:none;margin:0;padding:30px 0 10px;position:relative}
 .st{position:relative;margin:0 0 54px;display:flex}
@@ -160,11 +162,16 @@ a{color:var(--c)}
 .js .st.on .card{opacity:1;transform:none}
 .js .st .card{opacity:1!important;transform:none!important;transition:none}
 .st.textonly .card{padding:18px 16px}
-)(); </script> <p>elghaly</p> <p class="lic-badges" dir="ltr"><a href="https://creativecommons.org/licenses/by/4.0/" rel="license">© elghaly · CC BY 4.0</a></p> </footer> <script src="/page-menu.js" defer></script> <script> document.documentElement.classList.add('js'); const rm=matchMedia('(prefers-reduced-motion: reduce)').matches; const road=document.querySelector('.road'),stops=[...document.querySelectorAll('.st')],bed=document.getElementById('bed'),line=document.getElementById('line');let len=1; function draw(){const r=road.getBoundingClientRect();const pts=stops.map(s=>{const n=s.querySelector('.node').getBoundingClientRect();return[n.left+n.width/2-r.left,n.top+n.height/2-r.top]}
-.node{position:absolute;top:34px;width:18px;height:18px;margin-top:-9px;border-radius:50%;background:#1a1430;border:2px solid var(--gold);transition:.7s}
-.node{transition:none}
-.card{width:100%;background:linear-gradient(160deg,rgba(26,20,48,.9),rgba(13,17,32,.92));border:1px solid var(--line);border-radius:var(--radius);padding:12px;display:flex;gap:12px;align-items:center;box-shadow:0 0 28px rgba(159,127,209,.14)}
-.card img{width:76px;height:76px;border-radius:14px;object-fit:cover;flex:none;border:1px solid rgba(196,161,236,.4)}
+.st .node{position:absolute;top:34px;width:18px;height:18px;margin-top:-9px;border-radius:50%;background:#1a1430;border:2px solid var(--gold);transition:.7s}
+.st .node{transition:none}
+.st .card{width:100%;background:linear-gradient(160deg,rgba(26,20,48,.9),rgba(13,17,32,.92));border:1px solid var(--line);border-radius:var(--radius);padding:12px;display:flex;gap:12px;align-items:center;box-shadow:0 0 28px rgba(159,127,209,.14)}
+.st .card img{width:76px;height:76px;border-radius:14px;object-fit:cover;flex:none;border:1px solid rgba(196,161,236,.4)}
+/* Road cards: the status tag and the button each get their own row, so neither sits on the text. */
+.st .txt{min-width:0}
+.st .txt .pill{display:inline-block;margin:4px 0 2px}
+.st .txt p{margin:4px 0 0}
+.st .txt .go{display:inline-flex;align-items:center;justify-content:center;margin:12px 0 0;margin-inline-end:6px;line-height:1.2}
+.st.portrait .txt .go{margin-inline:3px}
 </style>
 </head>
 <body>
@@ -294,12 +301,12 @@ a{color:var(--c)}
       </div>
     </div>
     <div class="eye">
-      <img src="/iris-eye.svg" width="1200" height="630" loading="lazy" decoding="async" data-i18n-alt="eye_alt" alt="The IRIS eye, under a cross, above an open hand"/>
+      <img src="/iris-eye.svg" width="1200" height="630" loading="lazy" decoding="async" data-i18n-alt="eye_alt" alt="The IRIS eye above an open hand"/>
     </div>
   </section>
 
   <h1 class="mark" lang="en" dir="ltr">elghaly</h1>
-<p class="signs" aria-hidden="true">✝️ 🧿 🪬</p>
+<p class="signs" aria-hidden="true">🧿 🪬</p>
 <hr class="rule">
 <svg class="road__svg" aria-hidden="true"><path class="bed" id="bed"/><path class="line" id="line"/></svg>
       <ol class="stops" id="stops" aria-label="Our projects">
@@ -317,7 +324,7 @@ a{color:var(--c)}
       </ol>
 </main>
   <footer>
-    <p class="marks" aria-hidden="true" dir="ltr">✝️🧿🪬</p>
+    <p class="marks" aria-hidden="true" dir="ltr">🧿🪬</p>
     <p class="tagline tagline-foot" data-i18n="tagline" dir="auto">💭 you dream we build 🧠💡</p>
     <p data-i18n="by" dir="auto">IRIS 💡🦅 · by ElGhaly</p>
     <p class="we-are"><span data-i18n="we_are">We are 24</span></p>

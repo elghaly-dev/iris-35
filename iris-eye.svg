@@ -31,9 +31,6 @@
     <path d="M0 470 Q260 452 520 478 T1180 470"/>
     <path d="M40 510 Q300 492 560 518 T1160 508"/>
   </g>
-  <g transform="translate(600 56)" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round">
-    <path d="M0 0 V40"/><path d="M-16 18 H16"/>
-  </g>
   <g transform="translate(600 150)">
     <ellipse rx="150" ry="58" fill="none" stroke="#e2deff" stroke-width="3"/>
     <circle r="34" fill="url(#iris)" stroke="#c9c2ff" stroke-width="2"/>
@@ -51,7 +48,6 @@
   <text x="600" y="488" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="44" font-weight="700" letter-spacing="12" fill="#c9c2ff">— 35 —</text>
   <text x="600" y="530" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="22" letter-spacing="12" fill="#b9b3e6">ELGHALY</text>
   <g transform="translate(600 568)" fill="none" stroke="#e2deff" stroke-width="1.8">
-    <path d="M-90 0 H-20"/><path d="M20 0 H90"/>
-    <path d="M-6 -8 H6 M0 -14 V2"/>
+    <path d="M-90 0 H90"/>
   </g>
 </svg>

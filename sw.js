@@ -1,8 +1,8 @@
-var VERSION="2026-11-26-night-bg";
+var VERSION="2026-11-27-signs";
 var SHELL="iris-shell-"+VERSION;
 var FILES=["./","index.html","iris.css","iris-glass.css","i18n.js","sol-decode.js","app.js","boot.js","ui.js","chrome.js",
   "page-menu.js","favicon.svg","iris-eye.svg","hero.svg","qr.svg","icon-192.png","icon-512.png","manifest.webmanifest",
-  "IMG_6697.jpeg","IMG_6698.jpeg"];
+  "IMG_6697-v2.jpeg","IMG_6698.jpeg"];
 
 self.addEventListener("install",function(e){
   e.waitUntil(caches.open(SHELL).then(function(c){

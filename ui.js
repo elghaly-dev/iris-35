@@ -11,7 +11,7 @@ function put(sel, src){
   if(el) el.src=src;
 }
 put(".lock img","IMG_6698.jpeg");
-put(".eye img","IMG_6697.jpeg");
+put(".eye img","/IMG_6697-v2.jpeg");
 document.querySelectorAll(".lock-mask,.lock-words").forEach(function(n){n.remove();});
 var cs=document.createElement("script"); cs.src="/chrome.js?v=photos"; document.head.appendChild(cs);
 
