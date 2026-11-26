@@ -438,7 +438,7 @@
 
   // The ⌄ menu: Copy. ChatGPT is the button itself.
   var ITEMS = [
-    { act: "copy", label: "Copy page", sub: "Markdown for AI tools" }
+    { act: "copy", label: "Copy page", sub: "Markdown for chat assistants" }
   ];
 
   function build(slot) {
@@ -446,7 +446,7 @@
     var box = document.createElement("div");
     box.className = "pm";
     box.setAttribute("role", "group");
-    box.setAttribute("aria-label", "Ask AI about this page");
+    box.setAttribute("aria-label", "Ask ChatGPT about this page");
 
     var main = document.createElement("a");
     main.className = "pm-main";

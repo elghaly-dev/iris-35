@@ -81,11 +81,11 @@ function replyAsk(text){
   if(/install|apk|cleaner|sideload|\.mobileconfig|profile/.test(s))
     return tt("a_install","Do not install. Open the phone tab.");
   if(/connect|wallet|approve|sign/.test(s))
-    return tt("a_connect","Do not connect. Paste a public hash only.");
+    return tt("a_connect","Do not connect. Paste a public hash, nothing else.");
   if(/2fa|otp|code|verification/.test(s))
     return tt("a_code","Do not send the code. Hang up. Change the password on this phone.");
   if(/price|pay|cost|fee/.test(s))
-    return tt("a_price","No charge for the first pass. Extra only after work you asked for.");
+    return tt("a_price","No charge for the first pass. Extra after work you asked for.");
   return tt("a_default","Pick a phone tab or paste a public hash.");
 }
 var askgo=document.getElementById("askgo");
