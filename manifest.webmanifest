@@ -1,5 +1,5 @@
 {
-  "name": "Iris 35 — free server to think and ship",
+  "name": "Iris 35 — open server to think and ship",
   "short_name": "IRIS 35",
   "id": "/",
   "start_url": "./?src=pwa",
@@ -8,7 +8,7 @@
   "orientation": "portrait",
   "background_color": "#07080c",
   "theme_color": "#07080c",
-  "description": "Free open server. Look on your glass, tap the path, ship the next step. Works offline.",
+  "description": "Open server. Look on your glass, tap the path, ship the next step. Works offline.",
   "lang": "en",
   "dir": "auto",
   "categories": ["security", "utilities", "education"],

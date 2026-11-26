@@ -33,7 +33,7 @@ BANNED = re.compile(r"\b(free|safe|safety|AI)\b", re.I)
 # Remove entries as the copy is fixed.
 MENU_BASELINE = {"Markdown for AI tools", "Ask AI about this page"}  # existing labels; fix then remove
 FOOTER_ENFORCED = False  # flip to True once the footer PRs (plain name + address) are merged
-BANNED_BASELINE = {"ar/index.html": {"free": 9, "safe": 2, "safety": 1}, "index.html": {"free": 9, "safe": 2, "safety": 1}, "ru/index.html": {"free": 9, "safe": 2, "safety": 1}, "zh/index.html": {"free": 9, "safe": 2, "safety": 1}}
+BANNED_BASELINE = {"ar/index.html": {"safe": 2, "safety": 1}, "index.html": {"safe": 2, "safety": 1}, "ru/index.html": {"safe": 2, "safety": 1}, "zh/index.html": {"safe": 2, "safety": 1}}
 
 SKIP = {".git", ".github", "tools", "fonts", "assets"}
 EXEMPT_FRAGMENTS = (

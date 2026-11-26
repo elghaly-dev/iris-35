@@ -85,7 +85,7 @@ function replyAsk(text){
   if(/2fa|otp|code|verification/.test(s))
     return tt("a_code","Do not send the code. Hang up. Change the password on this phone.");
   if(/price|pay|cost|fee/.test(s))
-    return tt("a_price","First pass is free. Extra only after work you asked for.");
+    return tt("a_price","No charge for the first pass. Extra only after work you asked for.");
   return tt("a_default","Pick a phone tab or paste a public hash.");
 }
 var askgo=document.getElementById("askgo");

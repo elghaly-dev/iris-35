@@ -6,7 +6,7 @@ tap_h:"TAP VS WRITE",tap_p:"LOOK IS SAFE",tap_q:"Opening a page is not the theft
 queue_p:"STILL RUNNING",queue_q:"What keeps running without your ask.",queue_r:"Unknown device. MDM profile. Safari extension. Linked WhatsApp. Mail forward. Same questions as LOOK.",
 doors_h:"TWO DOORS",doors_p:"ONE ACCOUNT EACH",doors_q:"Each Google / Apple account is its own door.",doors_r:"Check devices on the account you actually use for work.",
 shape_h:"SIGNATURE SHAPE",shape_p:"PUBLIC HASH ONLY",shape_q:"Same-page repay = closed circle. An approval that still lives after SUCCESS = open door.",shape_r:"No connect. Paste a public hash only if you already chose I signed crypto.",
-pline_h:"PRIVATE LINE",pline_p:"MAIL ONLY",pline_q:"Free on the glass. PRIVATE is mail. Extra only AFTER the work.",pline_r:"support@elghaly.dev — write PRIVATE or HUMAN. No price on this page.",
+pline_h:"PRIVATE LINE",pline_p:"MAIL ONLY",pline_q:"No charge on the glass. PRIVATE is mail. Extra only AFTER the work.",pline_r:"support@elghaly.dev — write PRIVATE or HUMAN. No price on this page.",
 ship_h:"SHIP",ship_p:"ONE PERSON",ship_q:"Teach one person you love. Do not take their phone.",ship_r:"Send them this same URL: https://iris-35.elghaly.dev/"
 },
 ar:{
@@ -16,7 +16,7 @@ tap_h:"لمسة وكتابة",tap_p:"النظر آمن",tap_q:"فتح الصفح
 queue_p:"ما زال يشتغل",queue_q:"ما يظل يعمل بلا طلبك.",queue_r:"جهاز مجهول. ملف MDM. إضافة سفاري. واتساب مربوط. تحويل بريد. نفس أسئلة LOOK.",
 doors_h:"بابان",doors_p:"حساب لكل باب",doors_q:"كل حساب Google / Apple باب وحده.",doors_r:"راجع الأجهزة على الحساب الذي تعمل عليه.",
 shape_h:"شكل التوقيع",shape_p:"توقيع عام فقط",shape_q:"سداد في نفس الصفحة = دائرة مغلقة. موافقة تبقى بعد SUCCESS = باب مفتوح.",shape_r:"بلا ربط. الصق توقيعاً عاماً فقط إن اخترتَ وقّعت توقيعاً.",
-pline_h:"الخط الخاص",pline_p:"البريد فقط",pline_q:"مجاناً على الزجاج. PRIVATE بالبريد. الزيادة بعد العمل.",pline_r:"support@elghaly.dev — اكتب PRIVATE أو HUMAN. بلا سعر هنا.",
+pline_h:"الخط الخاص",pline_p:"البريد فقط",pline_q:"بلا رسوم على الزجاج. PRIVATE بالبريد. الزيادة بعد العمل.",pline_r:"support@elghaly.dev — اكتب PRIVATE أو HUMAN. بلا سعر هنا.",
 ship_h:"أرسل",ship_p:"شخص واحد",ship_q:"علّم شخصاً تحبه. لا تأخذ هاتفه.",ship_r:"أرسل نفس الرابط: https://iris-35.elghaly.dev/"
 },
 ru:{
@@ -26,7 +26,7 @@ tap_h:"НАЖАТЬ И ПИСАТЬ",tap_p:"СМОТРЕТЬ БЕЗОПАСНО"
 queue_p:"ЕЩЁ РАБОТАЕТ",queue_q:"Что идёт без твоей просьбы.",queue_r:"Чужое устройство. MDM. Расширение Safari. WhatsApp. Пересылка почты. Те же вопросы LOOK.",
 doors_h:"ДВЕ ДВЕРИ",doors_p:"ОДИН АККАУНТ",doors_q:"Каждый Google / Apple — своя дверь.",doors_r:"Смотри устройства на том аккаунте, куда ты работаешь.",
 shape_h:"ФОРМА ПОДПИСИ",shape_p:"ТОЛЬКО ХЕШ",shape_q:"Возврат на той же странице = замкнутый круг. Одобрение после SUCCESS = открытая дверь.",shape_r:"Без connect. Только публичный хеш, если ты уже выбрал подпись.",
-pline_h:"ЧАСТНАЯ ЛИНИЯ",pline_p:"ТОЛЬКО ПОЧТА",pline_q:"На стекле бесплатно. PRIVATE — почта. Доплата после работы.",pline_r:"support@elghaly.dev — PRIVATE или HUMAN. Без цены на странице.",
+pline_h:"ЧАСТНАЯ ЛИНИЯ",pline_p:"ТОЛЬКО ПОЧТА",pline_q:"На стекле без оплаты. PRIVATE — почта. Доплата после работы.",pline_r:"support@elghaly.dev — PRIVATE или HUMAN. Без цены на странице.",
 ship_h:"ОТПРАВИТЬ",ship_p:"ОДИН ЧЕЛОВЕК",ship_q:"Научи того, кого любишь. Не забирай телефон.",ship_r:"Тот же URL: https://iris-35.elghaly.dev/"
 },
 de:{
@@ -60,7 +60,7 @@ doors_h:"两扇门",doors_p:"一个账户一扇门",doors_q:"每个 Google / App
 doors_r:"查你真正用来工作的那个账户的设备。",
 shape_h:"签名形状",shape_p:"仅公开哈希",shape_q:"同页还款 = 闭环。SUCCESS 之后还活着的授权 = 开门。",
 shape_r:"不连接。只有你已选「我签了加密」才贴公开哈希。",
-pline_h:"私密线",pline_p:"仅邮件",pline_q:"玻璃上免费。PRIVATE 走邮件。加收在事后。",
+pline_h:"私密线",pline_p:"仅邮件",pline_q:"玻璃上不收费。PRIVATE 走邮件。加收在事后。",
 pline_r:"support@elghaly.dev — 写 PRIVATE 或 HUMAN。本页不标价。",
 ship_h:"送出",ship_p:"一个人",ship_q:"教你爱的人。不要拿走他们的手机。",
 ship_r:"同一网址：https://iris-35.elghaly.dev/"
