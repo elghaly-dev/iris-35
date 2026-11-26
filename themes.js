@@ -1,7 +1,7 @@
 (function(){
   var KEY='house-theme';
   var THEMES={
-    house:{bg:'#5a4fc0',ink:'#ffffff',dim:'#b9b3e6',accent:'#c9c2ff',card:'#0d0b1f',line:'#2e2856',dot:'#c9c2ff'}
+    house:{bg:'#07080c',ink:'#ffffff',dim:'#b9b3e6',accent:'#c9c2ff',card:'#0d0b1f',line:'#2e2856',dot:'#c9c2ff'}
   };
   var LABELS={house:'elghaly'};
   var ORDER=['house'];
@@ -24,7 +24,7 @@
     r.style.setProperty('--accent',t.accent);
     r.style.setProperty('--line',t.line);
     r.style.setProperty('--surface',t.card);
-    if(document.body){document.body.style.background=t.bg;document.body.style.color=t.ink;}
+    if(document.body){document.body.style.background='transparent';document.body.style.color=t.ink;}
     try{localStorage.setItem(KEY,name);}catch(e){}
     document.querySelectorAll('[data-theme-item]').forEach(function(el){
       el.classList.toggle('on', el.getAttribute('data-theme-item')===name);
