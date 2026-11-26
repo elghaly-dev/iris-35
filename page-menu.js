@@ -1,6 +1,7 @@
-/* page-menu.js — the "Ask ChatGPT | ⌄" button at the top of a content page.
+/* page-menu.js — the "Ask a chat assistant | ⌄" button at the top of a content page.
  *
- * One split button: the main half opens this page in ChatGPT; the ⌄ half
+ * One split button: the main half opens this page in a chat assistant
+ * (chatgpt.com); the ⌄ half
  * opens a menu with Copy page. Plain JS. No tracking, no
  * cookies, no network calls: the Markdown is built from the page in this tab,
  * so it is always the page as it is now.
@@ -436,7 +437,19 @@
   // ── render ──────────────────────────────────────────────────────────────
   function chatgptUrl(q) { return "https://chatgpt.com/?q=" + q; }
 
-  // The ⌄ menu: Copy. ChatGPT is the button itself.
+  // Button words per page language (<html lang>); English when unknown.
+  var ASK = {
+    en: { label: "Ask a chat assistant", aria: "Ask a chat assistant about this page" },
+    ar: { label: "اسأل مساعد المحادثة", aria: "اسأل مساعد المحادثة عن هذه الصفحة" },
+    ru: { label: "Спросить чат-ассистента", aria: "Спросить чат-ассистента об этой странице" },
+    zh: { label: "询问聊天助手", aria: "向聊天助手询问这个页面" }
+  };
+  function askWords() {
+    var l = (document.documentElement.getAttribute("lang") || "en").toLowerCase().split("-")[0];
+    return ASK[l] || ASK.en;
+  }
+
+  // The ⌄ menu: Copy. The chat assistant is the button itself.
   var ITEMS = [
     { act: "copy", label: "Copy page", sub: "Markdown for chat assistants" }
   ];
@@ -446,14 +459,18 @@
     var box = document.createElement("div");
     box.className = "pm";
     box.setAttribute("role", "group");
-    box.setAttribute("aria-label", "Ask ChatGPT about this page");
+    var ask = askWords();
+    box.setAttribute("aria-label", ask.aria);
 
     var main = document.createElement("a");
     main.className = "pm-main";
     main.href = chatgptUrl(q);
     main.target = "_blank";
     main.rel = "noopener noreferrer";
-    main.innerHTML = SPARK + "<span>Ask ChatGPT</span>";
+    main.innerHTML = SPARK;
+    var askLabel = document.createElement("span");
+    askLabel.textContent = ask.label;
+    main.appendChild(askLabel);
 
     var details = document.createElement("details");
     details.className = "pm-more";
