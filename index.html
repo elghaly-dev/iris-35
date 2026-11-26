@@ -166,6 +166,12 @@ hr.rule { width: 120px; height: 1px; margin: 26px auto 0; border: 0; background:
 .st .node{transition:none}
 .st .card{width:100%;background:linear-gradient(160deg,rgba(26,20,48,.9),rgba(13,17,32,.92));border:1px solid var(--line);border-radius:var(--radius);padding:12px;display:flex;gap:12px;align-items:center;box-shadow:0 0 28px rgba(159,127,209,.14)}
 .st .card img{width:76px;height:76px;border-radius:14px;object-fit:cover;flex:none;border:1px solid rgba(196,161,236,.4)}
+/* Road cards: the status tag and the button each get their own row, so neither sits on the text. */
+.st .txt{min-width:0}
+.st .txt .pill{display:inline-block;margin:4px 0 2px}
+.st .txt p{margin:4px 0 0}
+.st .txt .go{display:inline-flex;align-items:center;justify-content:center;margin:12px 0 0;margin-inline-end:6px;line-height:1.2}
+.st.portrait .txt .go{margin-inline:3px}
 </style>
 </head>
 <body>
